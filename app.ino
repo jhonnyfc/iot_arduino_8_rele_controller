@@ -13,10 +13,14 @@ void setup() {
 
   ArduinoCloud.begin(ArduinoIoTPreferredConnection);
 
-  setDebugMessageLevel(4);  // Nivel de logs 0 - 4
+  setDebugMessageLevel(0);  // Nivel de logs 0 - 4
   ArduinoCloud.printDebugInfo();
 
   pinMode(RELE_ONE_PIN, OUTPUT);
+  pinMode(RELE_TWO_PIN, OUTPUT);
+  pinMode(RELE_THREE_PIN, OUTPUT);
+  pinMode(RELE_FOUR_PIN, OUTPUT);
+  pinMode(RELE_EIGHT_PIN, OUTPUT);
 }
 
 void loop() {
@@ -24,8 +28,16 @@ void loop() {
 
   if (isTick()) {
     releOne.checkStatus();
+    releTwo.checkStatus();
+    releThree.checkStatus();
+    releFour.checkStatus();
+    releEight.checkStatus();
 
     isRele01CloseRM = releOne.getIsClose();
+    isRele02CloseRM = releTwo.getIsClose();
+    isRele03CloseRM = releThree.getIsClose();
+    isRele04CloseRM = releFour.getIsClose();
+    isRele08CloseRM = releEight.getIsClose();
 
     saveTick();
   }

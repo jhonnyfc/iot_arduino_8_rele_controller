@@ -5,4 +5,20 @@ bool isRele01CloseRM;
 int RELE_01_CLOSE_MINUTES = 1;
 int RELE_01_OPEN_MINUTES = 1;
 
+bool isRele02CloseRM;
+int RELE_02_CLOSE_MINUTES = 1;
+int RELE_02_OPEN_MINUTES = 1;
+
+bool isRele03CloseRM;
+int RELE_03_CLOSE_MINUTES = 1;
+int RELE_03_OPEN_MINUTES = 1;
+
+bool isRele04CloseRM;
+int RELE_04_CLOSE_MINUTES = 1;
+int RELE_04_OPEN_MINUTES = 1;
+
+bool isRele08CloseRM;
+int RELE_08_CLOSE_MINUTES = 1;
+int RELE_08_OPEN_MINUTES = 1;
+
 #endif

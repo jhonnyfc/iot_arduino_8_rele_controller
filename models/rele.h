@@ -17,7 +17,7 @@ class Rele {
     this->relePin = relePin;
     this->closeMinutes = closeMinutes;
     this->openMinutes = openMinutes;
-    openRele();
+    closeRele();
   }
 
   void initTimers() {
