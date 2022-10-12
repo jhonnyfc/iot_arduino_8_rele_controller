@@ -39,15 +39,15 @@ class Rele {
     digitalWrite(relePin, OPEN_SWITCH);
   }
 
-  void checkStatus() {
+  void checkStatus(int diffTime) {
     if (isClose) {
-      ++currentCloseSecs;
+      currentCloseSecs += diffTime;
       stateMinutes = seconds2Minutes(currentCloseSecs);
       if (stateMinutes >= closeMinutes) {
         openRele();
       }
     } else {
-      ++currentOpenSecs;
+      currentOpenSecs += diffTime;
       stateMinutes = seconds2Minutes(currentOpenSecs);
       if (stateMinutes >= openMinutes) {
         closeRele();

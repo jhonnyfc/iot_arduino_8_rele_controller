@@ -4,9 +4,9 @@
 const int CLOSE_SWITCH = LOW;
 const int OPEN_SWITCH = HIGH;
 
+const int ZERO_SECONDS = 0;
+const int ONE_SECOND = 1;
 const int ONE_MINUTE_SECONDS = 60;
-
-const int TICK_MILLIS = 710;
 
 #define RELE_ONE_PIN 4
 #define RELE_TWO_PIN 16
