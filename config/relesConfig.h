@@ -17,6 +17,10 @@ bool isRele04CloseRM;
 int RELE_04_CLOSE_MINUTES = 1;
 int RELE_04_OPEN_MINUTES = 1;
 
+bool isRele05CloseRM;
+int RELE_05_CLOSE_MINUTES = 1;
+int RELE_05_OPEN_MINUTES = 1;
+
 bool isRele08CloseRM;
 int RELE_08_CLOSE_MINUTES = 1;
 int RELE_08_OPEN_MINUTES = 1;
