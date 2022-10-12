@@ -1,4 +1,4 @@
-#include "./config/relesconfig.h"
+#include "./config/relesConfig.h"
 #include "./config/thingProperties.h"
 #include "./constants/global.h"
 #include "./models/rele.h"
@@ -41,6 +41,13 @@ void loop() {
     isRele04CloseRM = releFour.getIsClose();
     isRele05CloseRM = releFive.getIsClose();
     isRele08CloseRM = releEight.getIsClose();
+
+    rele01StateMinutes = releOne.getStateMinutes();
+    rele02StateMinutes = releTwo.getStateMinutes();
+    rele03StateMinutes = releThree.getStateMinutes();
+    rele04StateMinutes = releFour.getStateMinutes();
+    rele05StateMinutes = releFive.getStateMinutes();
+    rele08StateMinutes = releEight.getStateMinutes();
 
     saveTick();
   }
