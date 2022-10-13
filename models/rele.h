@@ -8,10 +8,9 @@ class Rele {
   int closeMinutes;
   int openMinutes;
 
-  unsigned int currentCloseSecs;
-  unsigned int currentOpenSecs;
   bool isClose;
-  int stateMinutes;
+  int currentStateMinutes;
+  unsigned int currentStateSecs;
 
  public:
   Rele(byte relePin, int closeMinutes, int openMinutes) {
@@ -22,9 +21,8 @@ class Rele {
   }
 
   void initTimers() {
-    currentCloseSecs = 0;
-    currentOpenSecs = 0;
-    stateMinutes = 0;
+    currentStateSecs = 0;
+    currentStateMinutes = 0;
   }
 
   void closeRele() {
@@ -40,16 +38,15 @@ class Rele {
   }
 
   void checkStatus(int diffTime) {
+    currentStateSecs += diffTime;
+    currentStateMinutes = seconds2Minutes(currentStateSecs);
+
     if (isClose) {
-      currentCloseSecs += diffTime;
-      stateMinutes = seconds2Minutes(currentCloseSecs);
-      if (stateMinutes >= closeMinutes) {
+      if (currentStateMinutes >= closeMinutes) {
         openRele();
       }
     } else {
-      currentOpenSecs += diffTime;
-      stateMinutes = seconds2Minutes(currentOpenSecs);
-      if (stateMinutes >= openMinutes) {
+      if (currentStateMinutes >= openMinutes) {
         closeRele();
       }
     }
@@ -75,7 +72,7 @@ class Rele {
     this->openMinutes = openMinutes;
   }
 
-  int getStateMinutes() {
-    return stateMinutes;
+  int getCurrentStateMinutes() {
+    return currentStateMinutes;
   }
 };

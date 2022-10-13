@@ -47,10 +47,10 @@ void loop() {
   isRele05CloseRM = releFive.getIsClose();
   isRele08CloseRM = releEight.getIsClose();
 
-  rele01StateMinutes = releOne.getStateMinutes();
-  rele02StateMinutes = releTwo.getStateMinutes();
-  rele03StateMinutes = releThree.getStateMinutes();
-  rele04StateMinutes = releFour.getStateMinutes();
-  rele05StateMinutes = releFive.getStateMinutes();
-  rele08StateMinutes = releEight.getStateMinutes();
+  rele01StateMinutes = releOne.getCurrentStateMinutes();
+  rele02StateMinutes = releTwo.getCurrentStateMinutes();
+  rele03StateMinutes = releThree.getCurrentStateMinutes();
+  rele04StateMinutes = releFour.getCurrentStateMinutes();
+  rele05StateMinutes = releFive.getCurrentStateMinutes();
+  rele08StateMinutes = releEight.getCurrentStateMinutes();
 }
