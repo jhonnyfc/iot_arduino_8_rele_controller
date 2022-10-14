@@ -23,6 +23,8 @@ void onReleFiveSwitchChange();
 void onReleFiveCloseMinutesChange();
 void onReleFiveOpenMinutesChange();
 
+void onReleSevenSwitchChange();
+
 void onReleEightSwitchChange();
 void onReleEightCloseMinutesChange();
 void onReleEightOpenMinutesChange();
@@ -55,6 +57,8 @@ void initProperties() {
   ArduinoCloud.addProperty(RELE_05_CLOSE_MINUTES, READWRITE, ON_CHANGE, onReleFiveCloseMinutesChange, 1);
   ArduinoCloud.addProperty(RELE_05_OPEN_MINUTES, READWRITE, ON_CHANGE, onReleFiveOpenMinutesChange, 1);
   ArduinoCloud.addProperty(rele05StateMinutes, READ, ON_CHANGE, NULL);
+
+  ArduinoCloud.addProperty(isRele07CloseRM, READWRITE, ON_CHANGE, onReleSevenSwitchChange);
 
   ArduinoCloud.addProperty(isRele08CloseRM, READWRITE, ON_CHANGE, onReleEightSwitchChange);
   ArduinoCloud.addProperty(RELE_08_CLOSE_MINUTES, READWRITE, ON_CHANGE, onReleEightCloseMinutesChange, 1);

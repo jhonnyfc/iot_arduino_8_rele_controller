@@ -71,6 +71,12 @@ void onReleFiveOpenMinutesChange() {
   releFive.setOpenMinutes(RELE_05_OPEN_MINUTES);
 }
 
+Rele releSeven(RELE_SEVEN_PIN, 0, 0);
+
+void onReleSevenSwitchChange() {
+  releSeven.updateStatus(isRele07CloseRM);
+}
+
 Rele releEight(RELE_EIGHT_PIN, RELE_08_CLOSE_MINUTES, RELE_08_OPEN_MINUTES);
 
 void onReleEightSwitchChange() {

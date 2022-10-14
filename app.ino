@@ -21,6 +21,7 @@ void setup() {
   pinMode(RELE_THREE_PIN, OUTPUT);
   pinMode(RELE_FOUR_PIN, OUTPUT);
   pinMode(RELE_FIVE_PIN, OUTPUT);
+  pinMode(RELE_SEVEN_PIN, OUTPUT);
   pinMode(RELE_EIGHT_PIN, OUTPUT);
 
   rtc.setTime(0, 13, 13, 13, 12, 2013);
@@ -45,6 +46,7 @@ void loop() {
   isRele03CloseRM = releThree.getIsClose();
   isRele04CloseRM = releFour.getIsClose();
   isRele05CloseRM = releFive.getIsClose();
+  isRele07CloseRM = releSeven.getIsClose();
   isRele08CloseRM = releEight.getIsClose();
 
   rele01StateMinutes = releOne.getCurrentStateMinutes();

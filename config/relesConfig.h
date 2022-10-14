@@ -26,6 +26,8 @@ int rele05StateMinutes;
 int RELE_05_CLOSE_MINUTES = 1;
 int RELE_05_OPEN_MINUTES = 1;
 
+bool isRele07CloseRM;
+
 bool isRele08CloseRM;
 int rele08StateMinutes;
 int RELE_08_CLOSE_MINUTES = 1;
