@@ -38,21 +38,9 @@ void loop() {
     releFive.checkStatus(diffTime);
     releEight.checkStatus(diffTime);
 
+    uploadRelesState();
+    uploadRelesMinutes();
+
     saveTick();
   }
-
-  isRele01CloseRM = releOne.getIsClose();
-  isRele02CloseRM = releTwo.getIsClose();
-  isRele03CloseRM = releThree.getIsClose();
-  isRele04CloseRM = releFour.getIsClose();
-  isRele05CloseRM = releFive.getIsClose();
-  isRele07CloseRM = releSeven.getIsClose();
-  isRele08CloseRM = releEight.getIsClose();
-
-  rele01StateMinutes = releOne.getCurrentStateMinutes();
-  rele02StateMinutes = releTwo.getCurrentStateMinutes();
-  rele03StateMinutes = releThree.getCurrentStateMinutes();
-  rele04StateMinutes = releFour.getCurrentStateMinutes();
-  rele05StateMinutes = releFive.getCurrentStateMinutes();
-  rele08StateMinutes = releEight.getCurrentStateMinutes();
 }

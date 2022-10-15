@@ -90,3 +90,22 @@ void onReleEightCloseMinutesChange() {
 void onReleEightOpenMinutesChange() {
   releEight.setOpenMinutes(RELE_08_OPEN_MINUTES);
 }
+
+void uploadRelesState() {
+  isRele01CloseRM = releOne.getIsClose();
+  isRele02CloseRM = releTwo.getIsClose();
+  isRele03CloseRM = releThree.getIsClose();
+  isRele04CloseRM = releFour.getIsClose();
+  isRele05CloseRM = releFive.getIsClose();
+  isRele07CloseRM = releSeven.getIsClose();
+  isRele08CloseRM = releEight.getIsClose();
+}
+
+void uploadRelesMinutes() {
+  rele01StateMinutes = releOne.getCurrentStateMinutes();
+  rele02StateMinutes = releTwo.getCurrentStateMinutes();
+  rele03StateMinutes = releThree.getCurrentStateMinutes();
+  rele04StateMinutes = releFour.getCurrentStateMinutes();
+  rele05StateMinutes = releFive.getCurrentStateMinutes();
+  rele08StateMinutes = releEight.getCurrentStateMinutes();
+}
