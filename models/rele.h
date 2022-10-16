@@ -12,12 +12,15 @@ class Rele {
   int currentStateMinutes;
   unsigned int currentStateSecs;
 
+  bool isFirstCurrentStateMinutesUpdate;
+
  public:
   Rele(byte relePin, int closeMinutes, int openMinutes) {
     this->relePin = relePin;
     this->closeMinutes = closeMinutes;
     this->openMinutes = openMinutes;
-    closeRele();
+    this->openRele();
+    this->isFirstCurrentStateMinutesUpdate = true;
   }
 
   void initTimers() {
@@ -74,5 +77,13 @@ class Rele {
 
   int getCurrentStateMinutes() {
     return currentStateMinutes;
+  }
+
+  void setCurrentStateMinutes(int currentStateMinutes) {
+    if (isFirstCurrentStateMinutesUpdate) {
+      this->currentStateMinutes = currentStateMinutes;
+      this->currentStateSecs = this->currentStateMinutes * ONE_MINUTE_SECONDS;
+      this->isFirstCurrentStateMinutesUpdate = false;
+    }
   }
 };

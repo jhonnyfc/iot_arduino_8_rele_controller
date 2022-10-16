@@ -30,17 +30,19 @@ void setup() {
 void loop() {
   ArduinoCloud.update();
 
-  if (isTick()) {
-    releOne.checkStatus(diffTime);
-    releTwo.checkStatus(diffTime);
-    releThree.checkStatus(diffTime);
-    releFour.checkStatus(diffTime);
-    releFive.checkStatus(diffTime);
-    releEight.checkStatus(diffTime);
+  if (ArduinoCloud.connected()) {
+    if (isTick()) {
+      releOne.checkStatus(diffTime);
+      releTwo.checkStatus(diffTime);
+      releThree.checkStatus(diffTime);
+      releFour.checkStatus(diffTime);
+      releFive.checkStatus(diffTime);
+      releEight.checkStatus(diffTime);
 
-    uploadRelesState();
-    uploadRelesMinutes();
+      uploadRelesState();
+      uploadRelesMinutes();
 
-    saveTick();
+      saveTick();
+    }
   }
 }

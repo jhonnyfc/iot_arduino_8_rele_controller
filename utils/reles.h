@@ -15,6 +15,10 @@ void onReleOneOpenMinutesChange() {
   releOne.setOpenMinutes(RELE_01_OPEN_MINUTES);
 }
 
+void onReleOneStateMinutesChange() {
+  releOne.setCurrentStateMinutes(rele01StateMinutes);
+}
+
 Rele releTwo(RELE_TWO_PIN, RELE_02_CLOSE_MINUTES, RELE_02_OPEN_MINUTES);
 
 void onReleTwoSwitchChange() {
@@ -27,6 +31,10 @@ void onReleTwoCloseMinutesChange() {
 
 void onReleTwoOpenMinutesChange() {
   releTwo.setOpenMinutes(RELE_02_OPEN_MINUTES);
+}
+
+void onReleTwoStateMinutesChange() {
+  releTwo.setCurrentStateMinutes(rele02StateMinutes);
 }
 
 Rele releThree(RELE_THREE_PIN, RELE_03_CLOSE_MINUTES, RELE_03_OPEN_MINUTES);
@@ -43,6 +51,10 @@ void onReleThreeOpenMinutesChange() {
   releThree.setOpenMinutes(RELE_03_OPEN_MINUTES);
 }
 
+void onReleThreeStateMinutesChange() {
+  releThree.setCurrentStateMinutes(rele03StateMinutes);
+}
+
 Rele releFour(RELE_FOUR_PIN, RELE_04_CLOSE_MINUTES, RELE_04_OPEN_MINUTES);
 
 void onReleFourSwitchChange() {
@@ -57,6 +69,10 @@ void onReleFourOpenMinutesChange() {
   releFour.setOpenMinutes(RELE_04_OPEN_MINUTES);
 }
 
+void onReleFourStateMinutesChange() {
+  releFour.setCurrentStateMinutes(rele04StateMinutes);
+}
+
 Rele releFive(RELE_FIVE_PIN, RELE_05_CLOSE_MINUTES, RELE_05_OPEN_MINUTES);
 
 void onReleFiveSwitchChange() {
@@ -69,6 +85,10 @@ void onReleFiveCloseMinutesChange() {
 
 void onReleFiveOpenMinutesChange() {
   releFive.setOpenMinutes(RELE_05_OPEN_MINUTES);
+}
+
+void onReleFiveStateMinutesChange() {
+  releFive.setCurrentStateMinutes(rele05StateMinutes);
 }
 
 Rele releSeven(RELE_SEVEN_PIN, 0, 0);
@@ -89,6 +109,10 @@ void onReleEightCloseMinutesChange() {
 
 void onReleEightOpenMinutesChange() {
   releEight.setOpenMinutes(RELE_08_OPEN_MINUTES);
+}
+
+void onReleEightStateMinutesChange() {
+  releEight.setCurrentStateMinutes(rele08StateMinutes);
 }
 
 void uploadRelesState() {
