@@ -24,25 +24,23 @@ void setup() {
   pinMode(RELE_SEVEN_PIN, OUTPUT);
   pinMode(RELE_EIGHT_PIN, OUTPUT);
 
-  rtc.setTime(0, 13, 13, 13, 12, 2013);
+  rtc.setTime(0, 13, 13, 13, 12, 2000);
 }
 
 void loop() {
   ArduinoCloud.update();
 
-  if (ArduinoCloud.connected()) {
-    if (isTick()) {
-      releOne.checkStatus(diffTime);
-      releTwo.checkStatus(diffTime);
-      releThree.checkStatus(diffTime);
-      releFour.checkStatus(diffTime);
-      releFive.checkStatus(diffTime);
-      releEight.checkStatus(diffTime);
+  if (isTick()) {
+    releOne.checkStatus(diffTime);
+    releTwo.checkStatus(diffTime);
+    releThree.checkStatus(diffTime);
+    releFour.checkStatus(diffTime);
+    releFive.checkStatus(diffTime);
+    releEight.checkStatus(diffTime);
 
-      uploadRelesState();
-      uploadRelesMinutes();
+    uploadRelesState();
+    uploadRelesMinutes();
 
-      saveTick();
-    }
+    saveTick();
   }
 }
