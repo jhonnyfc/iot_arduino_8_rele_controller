@@ -38,8 +38,10 @@ void loop() {
     releFive.checkStatus(diffTime);
     releEight.checkStatus(diffTime);
 
-    uploadRelesState();
-    uploadRelesMinutes();
+    if (ArduinoCloud.connected()) {
+      uploadRelesState();
+      uploadRelesMinutes();
+    }
 
     saveTick();
   }
