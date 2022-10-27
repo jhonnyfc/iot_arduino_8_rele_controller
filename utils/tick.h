@@ -15,7 +15,7 @@ bool isTick() {
   diffTime = currentSeconds - previousSeconds;
 
   if (diffTime < ZERO_SECONDS) {
-    diffTime = ONE_MINUTE_SECONDS - previousSeconds + currentSeconds;
+    diffTime = ONE_MINUTE_SECONDS + diffTime;
   }
 
   return diffTime >= ONE_SECOND;
