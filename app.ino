@@ -35,7 +35,7 @@ void loop() {
   ArduinoCloud.update();
 
   if (isTick(rtc)) {
-    checkStatus(getDiff());
+    checkRelesStatus(getDiff());
 
     if (ArduinoCloud.connected()) {
       uploadRelesState();

@@ -115,7 +115,7 @@ void onReleEightStateMinutesChange() {
   releEight.setCurrentStateMinutes(rele08StateMinutes);
 }
 
-void checkStatus(int diffTime) {
+void checkRelesStatus(int diffTime) {
   releOne.checkStatus(diffTime);
   releTwo.checkStatus(diffTime);
   releThree.checkStatus(diffTime);
