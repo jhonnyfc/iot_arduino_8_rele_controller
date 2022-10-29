@@ -1,9 +1,13 @@
+#include <ESP32Time.h>
+
 #include "./config/relesConfig.h"
 #include "./config/thingProperties.h"
 #include "./constants/global.h"
 #include "./models/rele.h"
 #include "./utils/reles.h"
 #include "./utils/tick.h"
+
+ESP32Time rtc;
 
 void setup() {
   Serial.begin(9600);
@@ -30,13 +34,8 @@ void setup() {
 void loop() {
   ArduinoCloud.update();
 
-  if (isTick()) {
-    releOne.checkStatus(diffTime);
-    releTwo.checkStatus(diffTime);
-    releThree.checkStatus(diffTime);
-    releFour.checkStatus(diffTime);
-    releFive.checkStatus(diffTime);
-    releEight.checkStatus(diffTime);
+  if (isTick(rtc)) {
+    checkStatus(getDiff());
 
     if (ArduinoCloud.connected()) {
       uploadRelesState();

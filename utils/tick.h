@@ -1,7 +1,3 @@
-#include <ESP32Time.h>
-
-ESP32Time rtc;
-
 int previousSeconds = 0;
 int currentSeconds;
 int diffTime;
@@ -10,7 +6,7 @@ void saveTick() {
   previousSeconds = currentSeconds;
 }
 
-bool isTick() {
+bool isTick(ESP32Time rtc) {
   currentSeconds = rtc.getSecond();
   diffTime = currentSeconds - previousSeconds;
 
@@ -19,4 +15,8 @@ bool isTick() {
   }
 
   return diffTime >= ONE_SECOND;
+}
+
+int getDiff() {
+  return diffTime;
 }

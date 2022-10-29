@@ -115,6 +115,15 @@ void onReleEightStateMinutesChange() {
   releEight.setCurrentStateMinutes(rele08StateMinutes);
 }
 
+void checkStatus(int diffTime) {
+  releOne.checkStatus(diffTime);
+  releTwo.checkStatus(diffTime);
+  releThree.checkStatus(diffTime);
+  releFour.checkStatus(diffTime);
+  releFive.checkStatus(diffTime);
+  releEight.checkStatus(diffTime);
+}
+
 void uploadRelesState() {
   isRele01CloseRM = releOne.getIsClose();
   isRele02CloseRM = releTwo.getIsClose();
