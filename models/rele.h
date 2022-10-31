@@ -1,5 +1,5 @@
 int seconds2Minutes(unsigned int seconds) {
-  return seconds / ONE_MINUTE_SECONDS;
+  return (int)seconds / ONE_MINUTE_SECONDS;
 }
 
 class Rele {
@@ -12,15 +12,12 @@ class Rele {
   int currentStateMinutes;
   unsigned int currentStateSecs;
 
-  bool isFirstCurrentStateMinutesUpdate;
-
  public:
   Rele(byte relePin, int closeMinutes, int openMinutes) {
     this->relePin = relePin;
     this->closeMinutes = closeMinutes;
     this->openMinutes = openMinutes;
     this->openRele();
-    this->isFirstCurrentStateMinutesUpdate = true;
   }
 
   void initTimers() {
@@ -41,7 +38,7 @@ class Rele {
   }
 
   void checkStatus(int diffTime) {
-    currentStateSecs += diffTime;
+    currentStateSecs += (unsigned int)diffTime;
     currentStateMinutes = seconds2Minutes(currentStateSecs);
 
     if (isClose) {
@@ -80,10 +77,7 @@ class Rele {
   }
 
   void setCurrentStateMinutes(int currentStateMinutes) {
-    if (isFirstCurrentStateMinutesUpdate) {
-      this->currentStateMinutes = currentStateMinutes;
-      this->currentStateSecs = this->currentStateMinutes * ONE_MINUTE_SECONDS;
-      this->isFirstCurrentStateMinutesUpdate = false;
-    }
+    this->currentStateMinutes = currentStateMinutes;
+    this->currentStateSecs = (unsigned int)this->currentStateMinutes * ONE_MINUTE_SECONDS;
   }
 };

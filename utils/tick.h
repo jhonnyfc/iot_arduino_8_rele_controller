@@ -8,7 +8,12 @@ void saveTick() {
 
 bool isTick(ESP32Time rtc) {
   currentSeconds = rtc.getSecond();
-  diffTime = currentSeconds - previousSeconds;
+
+  if (ZERO_SECONDS <= currentSeconds && currentSeconds < ONE_MINUTE_SECONDS) {
+    diffTime = currentSeconds - previousSeconds;
+  } else {
+    diffTime = 0;
+  }
 
   if (diffTime < ZERO_SECONDS) {
     diffTime = ONE_MINUTE_SECONDS + diffTime;

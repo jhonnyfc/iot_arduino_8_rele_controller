@@ -7,7 +7,7 @@
 #include "./utils/reles.h"
 #include "./utils/tick.h"
 
-ESP32Time rtc;
+ESP32Time rtc(3600);
 
 void setup() {
   Serial.begin(9600);
@@ -17,7 +17,7 @@ void setup() {
 
   ArduinoCloud.begin(ArduinoIoTPreferredConnection);
 
-  setDebugMessageLevel(0);  // Nivel de logs 0 - 4
+  setDebugMessageLevel(4);  // Nivel de logs 0 - 4
   ArduinoCloud.printDebugInfo();
 
   pinMode(RELE_ONE_PIN, OUTPUT);
@@ -28,7 +28,7 @@ void setup() {
   pinMode(RELE_SEVEN_PIN, OUTPUT);
   pinMode(RELE_EIGHT_PIN, OUTPUT);
 
-  rtc.setTime(0, 13, 13, 13, 12, 2000);
+  rtc.setTime(0, 13, 13, 13, 1, 2000);
 }
 
 void loop() {
@@ -41,6 +41,9 @@ void loop() {
       uploadRelesState();
       uploadRelesMinutes();
     }
+
+    Serial.print("- Tick: ");
+    Serial.println(getDiff());
 
     saveTick();
   }

@@ -1,3 +1,6 @@
+#ifndef RELES
+#define RELES
+
 #include "../config/relesConfig.h"
 #include "../constants/global.h"
 
@@ -142,3 +145,5 @@ void uploadRelesMinutes() {
   rele05StateMinutes = releFive.getCurrentStateMinutes();
   rele08StateMinutes = releEight.getCurrentStateMinutes();
 }
+
+#endif
