@@ -17,7 +17,7 @@ void setup() {
 
   ArduinoCloud.begin(ArduinoIoTPreferredConnection);
 
-  setDebugMessageLevel(4);  // Nivel de logs 0 - 4
+  setDebugMessageLevel(0);  // Nivel de logs 0 - 4
   ArduinoCloud.printDebugInfo();
 
   pinMode(RELE_ONE_PIN, OUTPUT);
